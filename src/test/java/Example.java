@@ -53,7 +53,17 @@ public class Example {
 		page.locator("xpath = /html/body/table/tbody/tr/td/table/tbody/tr[13]/td[2]/input[1]").click(); //click submit
 	}
 	
+	/** Delete Customer */
+	public static void TC_005()
+	{
+		TC_002();
+		page.locator("xpath = /html/body/div[3]/div/ul/li[4]/a").click(); //click delete customer button from left sidebar
+		page.fill("input[name=\"cusid\"]", "68628"); //entry customer id
+		page.locator("xpath = /html/body/table/tbody/tr/td/table/tbody/tr[7]/td[2]/input[1]").click(); //click submit
+		page.onDialog(dialog -> dialog.accept());
+	}
+	
 	public static void main(String[] args) {
-		TC_004();
+		TC_005();
 	  }
 }
